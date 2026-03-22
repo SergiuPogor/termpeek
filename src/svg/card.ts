@@ -27,7 +27,7 @@ export function renderCard(opts: CardSvgOptions): string {
   // Section heights
   const titleSectionH = 52;
   const statsSectionH = 72;
-  const sparkSectionH = 56;
+  const sparkSectionH = 68;
   const langSectionH = languages.length > 0 ? 36 + languages.slice(0, 5).length * 26 + 8 : 0;
   const contribSectionH = authors.length > 0 ? 56 : 0;
   const footerSectionH = 28;
@@ -60,7 +60,7 @@ export function renderCard(opts: CardSvgOptions): string {
     // ── Sparkline ───────────────────────────────────────
     text(MARGIN, sparkY + 14, 'Contribution Activity', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
     sparkline(MARGIN, sparkY + 18, W_INNER, 28, sparklineData, theme),
-    text(MARGIN, sparkY + sparkSectionH - 4, `${sparklineData.reduce((a, b) => a + b, 0)} commits in the last ${sparklineData.length} weeks`, {
+    text(MARGIN, sparkY + sparkSectionH - 8, `${sparklineData.reduce((a, b) => a + b, 0)} commits in the last ${sparklineData.length} weeks`, {
       fontSize: 10, fill: theme.textMuted,
     }),
     // ── Language bars ────────────────────────────────────

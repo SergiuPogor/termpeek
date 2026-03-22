@@ -281,14 +281,6 @@ program
     console.log('✅ Config created: termpeek.json');
   });
 
-// ─── Global options ────────────────────────────────────────────────────────────
-
-program.option('-t, --theme <name>', `Set default theme for all commands: ${Object.keys(THEMES).join(' | ')}`);
-
-program.on('option:theme', (opts) => {
-  // Theme is set per-command, this just documents it
-});
-
 program
   .name('termpeek')
   .description('Beautiful SVG visualizations for git repositories')

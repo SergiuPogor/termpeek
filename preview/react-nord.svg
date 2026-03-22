@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="620" height="502" viewBox="0 0 620 502"
-  style="background:#0d1117;font-family:Inter, system-ui, sans-serif;">
+  width="620" height="514" viewBox="0 0 620 514"
+  style="background:#2e3440;font-family:Inter, system-ui, sans-serif;">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
-      .text { fill: #e6edf3; font-family: Inter, system-ui, sans-serif; }
-      .text-muted { fill: #7d8590; font-family: Inter, system-ui, sans-serif; }
-      .text-mono { fill: #e6edf3; font-family: JetBrains Mono, Menlo, monospace; }
-      .text-accent { fill: #58a6ff; }
-      .border { stroke: #30363d; }
+      .text { fill: #eceff4; font-family: Inter, system-ui, sans-serif; }
+      .text-muted { fill: #8ba0b0; font-family: Inter, system-ui, sans-serif; }
+      .text-mono { fill: #eceff4; font-family: JetBrains Mono, monospace; }
+      .text-accent { fill: #88c0d0; }
+      .border { stroke: #4c566a; }
     </style>
   </defs>
-<rect x="24" y="8" width="572" height="486" rx="16" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-<text x="32" y="60" font-size="18" font-weight="700" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">facebook / react</text>
-<text x="32" y="80" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits · 1 branches · 1 contributors · last activity 1d ago</text>
-<rect x="32" y="84" width="556" height="60" fill="#0d1117" rx="10"/>
-<text x="52" y="110" font-size="18" font-weight="700" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">⚡ 1</text>
-<text x="52" y="126" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">commits</text>
-<text x="182" y="110" font-size="18" font-weight="700" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">📂 1</text>
-<text x="182" y="126" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">branches</text>
-<text x="312" y="110" font-size="18" font-weight="700" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">👥 1</text>
-<text x="312" y="126" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">contributors</text>
-<text x="442" y="110" font-size="18" font-weight="700" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">📅 1d ago</text>
-<text x="442" y="126" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">last commit</text>
-<text x="32" y="170" font-size="11" font-weight="600" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">Contribution Activity</text>
-<path d="M 32,202 C 51.85714285714286,202 51.85714285714286,202 71.71428571428572,202 C 91.57142857142858,202 91.57142857142858,202 111.42857142857143,202 C 131.28571428571428,202 131.28571428571428,202 151.14285714285714,202 C 171,202 171,202 190.85714285714286,202 C 210.71428571428572,202 210.71428571428572,202 230.57142857142858,202 C 250.42857142857144,202 250.42857142857144,202 270.2857142857143,202 C 290.1428571428571,202 290.1428571428571,202 310,202 C 329.8571428571429,202 329.8571428571429,202 349.7142857142857,202 C 369.57142857142856,202 369.57142857142856,202 389.42857142857144,202 C 409.28571428571433,202 409.28571428571433,202 429.14285714285717,202 C 449,202 449,202 468.8571428571429,202 C 488.7142857142857,202 488.7142857142857,202 508.57142857142856,202 C 528.4285714285714,202 528.4285714285714,174 548.2857142857143,174 C 568.1428571428571,174 568.1428571428571,202 588,202 L 588,202 L 32,202 Z" fill="#3fb95033" opacity="0.4"/>
-<path d="M 32,202 C 51.85714285714286,202 51.85714285714286,202 71.71428571428572,202 C 91.57142857142858,202 91.57142857142858,202 111.42857142857143,202 C 131.28571428571428,202 131.28571428571428,202 151.14285714285714,202 C 171,202 171,202 190.85714285714286,202 C 210.71428571428572,202 210.71428571428572,202 230.57142857142858,202 C 250.42857142857144,202 250.42857142857144,202 270.2857142857143,202 C 290.1428571428571,202 290.1428571428571,202 310,202 C 329.8571428571429,202 329.8571428571429,202 349.7142857142857,202 C 369.57142857142856,202 369.57142857142856,202 389.42857142857144,202 C 409.28571428571433,202 409.28571428571433,202 429.14285714285717,202 C 449,202 449,202 468.8571428571429,202 C 488.7142857142857,202 488.7142857142857,202 508.57142857142856,202 C 528.4285714285714,202 528.4285714285714,174 548.2857142857143,174 C 568.1428571428571,174 568.1428571428571,202 588,202" fill="none" stroke="#3fb950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="32" y="208" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits in the last 15 weeks</text>
-<text x="32" y="226" font-size="11" font-weight="600" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">Languages</text>
-<text x="32" y="242" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">JavaScript</text>
-<text x="588" y="242" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="end" dominant-baseline="auto">71.7%</text>
-<rect x="32" y="248" width="376" height="8" fill="#0d1117" rx="4"/>
-<rect x="32" y="248" width="269.52030450634646" height="8" fill="#f1e05a" rx="4"/>
-<text x="32" y="268" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">Markdown</text>
-<text x="588" y="268" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="end" dominant-baseline="auto">15.5%</text>
-<rect x="32" y="274" width="376" height="8" fill="#0d1117" rx="4"/>
-<rect x="32" y="274" width="58.25714215715753" height="8" fill="#083fa1" rx="4"/>
-<text x="32" y="294" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">TypeScript</text>
-<text x="588" y="294" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="end" dominant-baseline="auto">8.6%</text>
-<rect x="32" y="300" width="376" height="8" fill="#0d1117" rx="4"/>
-<rect x="32" y="300" width="32.45235852103281" height="8" fill="#3178c6" rx="4"/>
-<text x="32" y="320" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">JSON</text>
-<text x="588" y="320" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="end" dominant-baseline="auto">1.9%</text>
-<rect x="32" y="326" width="376" height="8" fill="#0d1117" rx="4"/>
-<rect x="32" y="326" width="7.273559040421926" height="8" fill="#292929" rx="4"/>
-<text x="32" y="346" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">Other</text>
-<text x="588" y="346" font-size="11" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="end" dominant-baseline="auto">1.3%</text>
-<rect x="32" y="352" width="376" height="8" fill="#0d1117" rx="4"/>
-<rect x="32" y="352" width="4.723144665014065" height="8" fill="#8b949e" rx="4"/>
-<text x="32" y="400" font-size="11" font-weight="600" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">Top Contributors</text>
-<circle cx="42" cy="424" r="10" fill="#58a6ff"/>
-<text x="60" y="422" font-size="12" font-weight="400" fill="#e6edf3" font-family="inherit" text-anchor="start" dominant-baseline="auto">Ruslan Lesiutin</text>
-<text x="60" y="436" font-size="10" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits</text>
-<line x1="32" y1="442" x2="588" y2="442" stroke="#30363d" stroke-width="1"/>
-<text x="310" y="460" font-size="9" font-weight="400" fill="#7d8590" font-family="inherit" text-anchor="middle" dominant-baseline="auto">Generated by termpeek</text>
+<rect x="24" y="8" width="572" height="498" rx="16" fill="#3b4252" stroke="#4c566a" stroke-width="1"/>
+<text x="32" y="60" font-size="18" font-weight="700" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">facebook / react</text>
+<text x="32" y="80" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits · 1 branches · 1 contributors · last activity 1d ago</text>
+<rect x="32" y="84" width="556" height="60" fill="#2e3440" rx="10"/>
+<text x="52" y="110" font-size="18" font-weight="700" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">⚡ 1</text>
+<text x="52" y="126" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">commits</text>
+<text x="182" y="110" font-size="18" font-weight="700" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">📂 1</text>
+<text x="182" y="126" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">branches</text>
+<text x="312" y="110" font-size="18" font-weight="700" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">👥 1</text>
+<text x="312" y="126" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">contributors</text>
+<text x="442" y="110" font-size="18" font-weight="700" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">📅 1d ago</text>
+<text x="442" y="126" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">last commit</text>
+<text x="32" y="170" font-size="11" font-weight="600" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">Contribution Activity</text>
+<path d="M 32,202 C 51.85714285714286,202 51.85714285714286,202 71.71428571428572,202 C 91.57142857142858,202 91.57142857142858,202 111.42857142857143,202 C 131.28571428571428,202 131.28571428571428,202 151.14285714285714,202 C 171,202 171,202 190.85714285714286,202 C 210.71428571428572,202 210.71428571428572,202 230.57142857142858,202 C 250.42857142857144,202 250.42857142857144,202 270.2857142857143,202 C 290.1428571428571,202 290.1428571428571,202 310,202 C 329.8571428571429,202 329.8571428571429,202 349.7142857142857,202 C 369.57142857142856,202 369.57142857142856,202 389.42857142857144,202 C 409.28571428571433,202 409.28571428571433,202 429.14285714285717,202 C 449,202 449,202 468.8571428571429,202 C 488.7142857142857,202 488.7142857142857,202 508.57142857142856,202 C 528.4285714285714,202 528.4285714285714,174 548.2857142857143,174 C 568.1428571428571,174 568.1428571428571,202 588,202 L 588,202 L 32,202 Z" fill="#a3be8c33" opacity="0.4"/>
+<path d="M 32,202 C 51.85714285714286,202 51.85714285714286,202 71.71428571428572,202 C 91.57142857142858,202 91.57142857142858,202 111.42857142857143,202 C 131.28571428571428,202 131.28571428571428,202 151.14285714285714,202 C 171,202 171,202 190.85714285714286,202 C 210.71428571428572,202 210.71428571428572,202 230.57142857142858,202 C 250.42857142857144,202 250.42857142857144,202 270.2857142857143,202 C 290.1428571428571,202 290.1428571428571,202 310,202 C 329.8571428571429,202 329.8571428571429,202 349.7142857142857,202 C 369.57142857142856,202 369.57142857142856,202 389.42857142857144,202 C 409.28571428571433,202 409.28571428571433,202 429.14285714285717,202 C 449,202 449,202 468.8571428571429,202 C 488.7142857142857,202 488.7142857142857,202 508.57142857142856,202 C 528.4285714285714,202 528.4285714285714,174 548.2857142857143,174 C 568.1428571428571,174 568.1428571428571,202 588,202" fill="none" stroke="#a3be8c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="32" y="216" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits in the last 15 weeks</text>
+<text x="32" y="238" font-size="11" font-weight="600" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">Languages</text>
+<text x="32" y="254" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">JavaScript</text>
+<text x="588" y="254" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="end" dominant-baseline="auto">71.7%</text>
+<rect x="32" y="260" width="376" height="8" fill="#2e3440" rx="4"/>
+<rect x="32" y="260" width="269.52030450634646" height="8" fill="#f1e05a" rx="4"/>
+<text x="32" y="280" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">Markdown</text>
+<text x="588" y="280" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="end" dominant-baseline="auto">15.5%</text>
+<rect x="32" y="286" width="376" height="8" fill="#2e3440" rx="4"/>
+<rect x="32" y="286" width="58.25714215715753" height="8" fill="#083fa1" rx="4"/>
+<text x="32" y="306" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">TypeScript</text>
+<text x="588" y="306" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="end" dominant-baseline="auto">8.6%</text>
+<rect x="32" y="312" width="376" height="8" fill="#2e3440" rx="4"/>
+<rect x="32" y="312" width="32.45235852103281" height="8" fill="#3178c6" rx="4"/>
+<text x="32" y="332" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">JSON</text>
+<text x="588" y="332" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="end" dominant-baseline="auto">1.9%</text>
+<rect x="32" y="338" width="376" height="8" fill="#2e3440" rx="4"/>
+<rect x="32" y="338" width="7.273559040421926" height="8" fill="#292929" rx="4"/>
+<text x="32" y="358" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">Other</text>
+<text x="588" y="358" font-size="11" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="end" dominant-baseline="auto">1.3%</text>
+<rect x="32" y="364" width="376" height="8" fill="#2e3440" rx="4"/>
+<rect x="32" y="364" width="4.723144665014065" height="8" fill="#8b949e" rx="4"/>
+<text x="32" y="412" font-size="11" font-weight="600" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">Top Contributors</text>
+<circle cx="42" cy="436" r="10" fill="#88c0d0"/>
+<text x="60" y="434" font-size="12" font-weight="400" fill="#eceff4" font-family="inherit" text-anchor="start" dominant-baseline="auto">Ruslan Lesiutin</text>
+<text x="60" y="448" font-size="10" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="start" dominant-baseline="auto">1 commits</text>
+<line x1="32" y1="454" x2="588" y2="454" stroke="#4c566a" stroke-width="1"/>
+<text x="310" y="472" font-size="9" font-weight="400" fill="#8ba0b0" font-family="inherit" text-anchor="middle" dominant-baseline="auto">Generated by termpeek</text>
 </svg>
