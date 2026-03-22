@@ -7,25 +7,37 @@ npm install -g termpeek
 termpeek card --open
 ```
 
----
-
-## 🎨 Preview
-
-```
-termpeek card                                  # Repo health card
-termpeek graph --weeks 52                      # Full-year heatmap
-termpeek langs                                 # Language donut
-termpeek branches                             # Branch tree
-termpeek badge commits --period week          # Single badge
-```
-
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.1-blue?style=for-the-badge" alt="version">
-  <img src="https://img.shields.io/npm/v/termpeek?style=for-the-badge" alt="npm">
-  <img src="https://img.shields.io/npm/dm/termpeek?style=for-the-badge" alt="npm downloads">
+  <img src="https://img.shields.io/npm/v/termpeek?style=for-the-badge&color=blue" alt="npm version">
+  <img src="https://img.shields.io/npm/dm/termpeek?style=for-the-badge&color=brightgreen" alt="npm downloads">
   <img src="https://img.shields.io/badge/node-%3E%3D18-green?style=for-the-badge" alt="node">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=for-the-badge" alt="license">
+  <img src="https://img.shields.io/badge/themes-6-orange?style=for-the-badge" alt="themes">
 </p>
+
+---
+
+## 🎨 Live Preview — facebook/react
+
+> Cards generated with `termpeek card --repo facebook/react --theme <name>`
+
+### 🌑 Dark
+<img src="preview/react-dark.svg" alt="dark theme" width="100%">
+
+### 🧛 Dracula
+<img src="preview/react-dracula.svg" alt="dracula theme" width="100%">
+
+### 🔥 Monokai
+<img src="preview/react-monokai.svg" alt="monokai theme" width="100%">
+
+### 🏔️ Nord
+<img src="preview/react-nord.svg" alt="nord theme" width="100%">
+
+### 🌿 Gruvbox
+<img src="preview/react-gruvbox.svg" alt="gruvbox theme" width="100%">
+
+### 🐱 Catppuccin
+<img src="preview/react-catppuccin.svg" alt="catppuccin theme" width="100%">
 
 ---
 
