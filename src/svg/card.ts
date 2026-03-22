@@ -2,7 +2,10 @@ import { svgHeader, svgFooter, rect, text, line, roundedRect, circle, sparkline 
 import type { Theme } from '../types.js';
 import type { RepoStats, Commit, LanguageStat, Author } from '../types.js';
 import { getRelativeTime } from '../git/parser.js';
-import { THEMES, getTheme, langColor } from '../themes.js';
+import { THEMES, langColor } from '../themes.js';
+
+const MARGIN = 32;
+const CARD_RADIUS = 16;
 
 export interface CardSvgOptions {
   repoName: string;
@@ -16,95 +19,107 @@ export interface CardSvgOptions {
   width?: number;
 }
 
-const ICON_FIRE = '🔥';
-const ICON_BRANCH = '📂';
-const ICON_USERS = '👥';
-const ICON_CAL = '📅';
-const ICON_COMMIT = '⚡';
-
 export function renderCard(opts: CardSvgOptions): string {
-  const { repoName, repoOwner, stats, recentCommits, languages, authors, sparklineData, theme, width = 620 } = opts;
-  const CARD_RADIUS = 12;
-  const PADDING = 24;
+  const { repoName, repoOwner, stats, languages, authors, sparklineData, theme, width = 680 } = opts;
   const W = width;
-  const innerWidth = W - PADDING * 2;
+  const W_INNER = W - MARGIN * 2;
 
-  // Calculate heights
-  const titleH = 50;
-  const statsH = 44;
-  const sparklineH = 40;
-  const langH = languages.length > 0 ? 20 + languages.slice(0, 5).length * 22 + 8 : 0;
-  const contribH = authors.length > 0 ? 36 : 0;
-  const footerH = 20;
-  const cardH = titleH + statsH + sparklineH + langH + contribH + footerH + PADDING * 2;
+  // Section heights
+  const titleSectionH = 52;
+  const statsSectionH = 72;
+  const sparkSectionH = 56;
+  const langSectionH = languages.length > 0 ? 36 + languages.slice(0, 5).length * 26 + 8 : 0;
+  const contribSectionH = authors.length > 0 ? 56 : 0;
+  const footerSectionH = 28;
+  const totalH = MARGIN + titleSectionH + statsSectionH + sparkSectionH + langSectionH + contribSectionH + footerSectionH + MARGIN;
 
-  let y = 0;
-  const titleY = y + PADDING;
-  const statsY = titleY + titleH;
-  const sparkY = statsY + statsH;
-  const langY = sparkY + sparklineH;
-  const contribY = langY + langH;
-  const footerY = contribY + contribH + PADDING;
+  let y = MARGIN;
+  const titleY = y; y += titleSectionH;
+  const statsY = y; y += statsSectionH;
+  const sparkY = y; y += sparkSectionH;
+  const langY = y; y += langSectionH;
+  const contribY = y; y += contribSectionH;
+  const footerY = y; y += footerSectionH;
 
   const svg = [
-    svgHeader(W, footerY + footerH + 4, theme),
-    roundedRect(0, 0, W, footerY + footerH + 4, CARD_RADIUS, { fill: theme.surface, stroke: theme.border, strokeWidth: 1 }),
+    svgHeader(W, totalH, theme),
+    // Card background with outer margin
+    roundedRect(MARGIN - 8, 8, W - MARGIN * 2 + 16, totalH - 16, CARD_RADIUS, {
+      fill: theme.surface, stroke: theme.border, strokeWidth: 1,
+    }),
     // ── Title ──────────────────────────────────────────
-    text(PADDING, titleY + 28, `${ICON_FIRE} ${repoOwner} / ${repoName}`, {
-      fontSize: 16, fontWeight: '600', fill: theme.text,
+    text(MARGIN, titleY + 28, `${repoOwner} / ${repoName}`, {
+      fontSize: 18, fontWeight: '700', fill: theme.text,
+    }),
+    text(MARGIN, titleY + 48, repoStatsOneLiner(stats), {
+      fontSize: 11, fill: theme.textMuted,
     }),
     // ── Stats row ──────────────────────────────────────
-    rect(PADDING, statsY, innerWidth, statsH, { fill: theme.background, rx: 8 }),
-    renderStatBadge(ICON_COMMIT, `${stats.totalCommits}`, 'commits', PADDING + 10, statsY + 14, theme),
-    renderStatBadge(ICON_BRANCH, `${stats.totalBranches}`, 'branches', PADDING + 130, statsY + 14, theme),
-    renderStatBadge(ICON_USERS, `${stats.totalContributors}`, 'contributors', PADDING + 250, statsY + 14, theme),
-    renderStatBadge(ICON_CAL, stats.lastCommitDate ? getRelativeTime(stats.lastCommitDate) : 'N/A', 'last commit', PADDING + 370, statsY + 14, theme),
+    rect(MARGIN, statsY, W_INNER, statsSectionH - 12, { fill: theme.background, rx: 10 }),
+    renderStatsRow(MARGIN + 20, statsY + 8, stats, theme),
     // ── Sparkline ───────────────────────────────────────
-    sparkline(PADDING + 10, sparkY + 5, innerWidth - 20, 24, sparklineData, theme),
-    // Commits label
-    text(PADDING, sparkY + 36, `${sparklineData.reduce((a, b) => a + b, 0)} commits in last 14 weeks`, {
+    text(MARGIN, sparkY + 14, 'Contribution Activity', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
+    sparkline(MARGIN, sparkY + 18, W_INNER, 28, sparklineData, theme),
+    text(MARGIN, sparkY + sparkSectionH - 4, `${sparklineData.reduce((a, b) => a + b, 0)} commits in the last ${sparklineData.length} weeks`, {
       fontSize: 10, fill: theme.textMuted,
     }),
     // ── Language bars ────────────────────────────────────
     ...(languages.length > 0 ? [
-      text(PADDING, langY + 14, 'Languages', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
+      text(MARGIN, langY + 14, 'Languages', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
       ...languages.slice(0, 5).map((lang, i) => {
-        const ly = langY + 22 + i * 22;
-        const barW = innerWidth * (lang.percentage / 100);
+        const ly = langY + 26 + i * 26;
+        const barMaxW = W_INNER - 180;
+        const barW = Math.max((lang.percentage / 100) * barMaxW, 2);
         const color = langColor(lang.name, theme);
         return [
-          text(PADDING, ly + 10, lang.name, { fontSize: 11, fill: theme.text }),
-          rect(PADDING + 90, ly + 1, innerWidth - 90 - 70, 11, { fill: theme.background, rx: 5 }),
-          rect(PADDING + 90, ly + 1, barW, 11, { fill: color, rx: 5 }),
-          text(PADDING + 90 + innerWidth - 70, ly + 10, `${lang.percentage.toFixed(1)}%`, { fontSize: 10, fill: theme.textMuted }),
+          text(MARGIN, ly + 4, lang.name, { fontSize: 12, fill: theme.text }),
+          text(W - MARGIN, ly + 4, `${lang.percentage.toFixed(1)}%`, { fontSize: 11, fill: theme.textMuted, textAnchor: 'end' }),
+          rect(MARGIN, ly + 10, barMaxW, 8, { fill: theme.background, rx: 4 }),
+          rect(MARGIN, ly + 10, barW, 8, { fill: color, rx: 4 }),
         ];
       }),
     ] : []),
     // ── Contributors ─────────────────────────────────────
     ...(authors.length > 0 ? [
-      text(PADDING, contribY + 14, 'Top Contributors', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
+      text(MARGIN, contribY + 14, 'Top Contributors', { fontSize: 11, fontWeight: '600', fill: theme.textMuted }),
       ...authors.slice(0, 3).map((a, i) => {
-        const ax = PADDING + i * 160;
-        const ay = contribY + 24;
+        const ax = MARGIN + i * (W_INNER / 3);
+        const ay = contribY + 30;
+        const color = [theme.accent, theme.accentAlt, theme.success][i] ?? theme.accent;
+        const name = a.name.length > 18 ? a.name.substring(0, 16) + '…' : a.name;
         return [
-          circle(ax + 10, ay + 8, 10, { fill: [theme.accent, theme.accentAlt, theme.success][i] ?? theme.accent }),
-          text(ax + 28, ay + 12, a.name, { fontSize: 11, fill: theme.text }),
-          text(ax + 28, ay + 24, `${a.commits} commits`, { fontSize: 9, fill: theme.textMuted }),
+          circle(ax + 10, ay + 8, 10, { fill: color }),
+          text(ax + 28, ay + 6, name, { fontSize: 12, fill: theme.text }),
+          text(ax + 28, ay + 20, `${a.commits} commits`, { fontSize: 10, fill: theme.textMuted }),
         ];
       }),
     ] : []),
     // ── Footer ──────────────────────────────────────────
-    line(0, footerY, W, footerY, { stroke: theme.border, strokeWidth: 1 }),
-    text(W / 2, footerY + 14, 'Generated by termpeek', { fontSize: 9, fill: theme.textMuted, textAnchor: 'middle' }),
+    line(MARGIN, footerY, W - MARGIN, footerY, { stroke: theme.border }),
+    text(W / 2, footerY + 18, 'Generated by termpeek', { fontSize: 9, fill: theme.textMuted, textAnchor: 'middle' }),
     svgFooter(),
   ];
 
   return svg.flat().join('\n');
 }
 
-function renderStatBadge(icon: string, value: string, label: string, x: number, y: number, theme: Theme): string {
-  return [
-    text(x, y, `${icon} ${value}`, { fontSize: 14, fontWeight: '600', fill: theme.text }),
-    text(x, y + 16, label, { fontSize: 10, fill: theme.textMuted }),
-  ].join('\n');
+function renderStatsRow(x: number, y: number, stats: RepoStats, theme: Theme): string {
+  const items = [
+    { icon: '⚡', value: `${stats.totalCommits}`, label: 'commits' },
+    { icon: '📂', value: `${stats.totalBranches}`, label: 'branches' },
+    { icon: '👥', value: `${stats.totalContributors}`, label: 'contributors' },
+    { icon: '📅', value: stats.lastCommitDate ? getRelativeTime(stats.lastCommitDate) : 'N/A', label: 'last commit' },
+  ];
+  const itemW = 130;
+  return items.map((item, i) => {
+    const ix = x + i * itemW;
+    return [
+      text(ix, y + 18, `${item.icon} ${item.value}`, { fontSize: 18, fontWeight: '700', fill: theme.text }),
+      text(ix, y + 34, item.label, { fontSize: 10, fill: theme.textMuted }),
+    ].join('\n');
+  }).join('\n');
+}
+
+function repoStatsOneLiner(stats: RepoStats): string {
+  return `${stats.totalCommits} commits · ${stats.totalBranches} branches · ${stats.totalContributors} contributors · last activity ${stats.lastCommitDate ? getRelativeTime(stats.lastCommitDate) : 'N/A'}`;
 }
