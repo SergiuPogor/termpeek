@@ -7,8 +7,22 @@ npm install -g termpeek
 termpeek card --open
 ```
 
+---
+
+## 🎨 Preview
+
+```
+termpeek card                                  # Repo health card
+termpeek graph --weeks 52                      # Full-year heatmap
+termpeek langs                                 # Language donut
+termpeek branches                             # Branch tree
+termpeek badge commits --period week          # Single badge
+```
+
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="version">
+  <img src="https://img.shields.io/badge/version-1.0.1-blue?style=for-the-badge" alt="version">
+  <img src="https://img.shields.io/npm/v/termpeek?style=for-the-badge" alt="npm">
+  <img src="https://img.shields.io/npm/dm/termpeek?style=for-the-badge" alt="npm downloads">
   <img src="https://img.shields.io/badge/node-%3E%3D18-green?style=for-the-badge" alt="node">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=for-the-badge" alt="license">
 </p>

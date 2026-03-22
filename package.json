@@ -1,6 +1,6 @@
 {
   "name": "termpeek",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Beautiful SVG visualizations for git repositories — contribution heatmaps, repo cards, language donuts, and more",
   "keywords": [
     "git",
